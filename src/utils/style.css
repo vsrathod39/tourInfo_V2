@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.border-outlined {
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+}
+
+.login-signup-logo-container {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+}
+
+.bold-large-text {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.light-small-text {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.bold-sm-text {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.padding-top-buttom-8 {
+    padding: 8px 0px !important;
+}
+
+.login-signup-secondary-logo {
+    width: 20px;
+    height: 20px;
+}
+
+.horizontal-line {
+    border-top: 1px solid #bdbdbd;
+    width: 100%; 
+    height: 1px
+}

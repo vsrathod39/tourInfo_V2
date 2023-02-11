@@ -1,0 +1,31 @@
+.inputWithIcon {
+    position: relative;
+}
+  
+.inputWithIcon .left-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.inputWithIcon .right-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.form-control {
+    padding: 5.28px 40px !important;
+}
+
+.form-outline .form-control~.form-label {
+    left: 2.5rem;
+}
+
+.form-outline .form-control~.form-notch .form-notch-leading {
+    width: 2.25rem;
+}
