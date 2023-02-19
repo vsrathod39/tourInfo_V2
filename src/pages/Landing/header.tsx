@@ -1,11 +1,26 @@
 import { map } from "lodash";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { IPeople } from "./interface";
 
 export default function Header() {
   const [rightScrollValue, setRightScrollValue] = useState(false);
   const [leftScrollValue, setLeftScrollValue] = useState(true);
   const scrollContainer = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState({});
+
+  // useEffect(() => {
+  //   const containerStory = document.getElementsByClassName('scroll-container')[0];
+  //   function updatePosition() {
+  //     if(scrollContainer.current) {
+  //       setLeftScrollValue(scrollContainer.current.scrollLeft === 0);
+  //       console.log(scrollContainer.current.scrollWidth, scrollContainer.current.scrollLeft)
+  //     }
+  //     // setScrollPosition({ scrollX: window.scrollX });
+  //   }
+  //   containerStory.addEventListener('scroll', updatePosition);
+  //   updatePosition();
+  //   return () => containerStory.removeEventListener('scroll', updatePosition);
+  // }, []);
 
   const peopleList: Array<IPeople> = [
     { url: 'https://picsum.photos/200/300?random=1', name: 'random', id: '467673fff1er' },
@@ -47,6 +62,26 @@ export default function Header() {
     e.currentTarget.classList.add('active');
   };
 
+  const handleScroll = () => {
+    if (scrollContainer.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current;
+      switch (scrollLeft + clientWidth) {
+        case clientWidth:
+          setLeftScrollValue(true);
+          break;
+        case scrollWidth:
+          setRightScrollValue(true);
+          break;
+        default:
+          setLeftScrollValue(false);
+          setRightScrollValue(false);
+          if (scrollLeft + clientWidth > scrollWidth)
+            setRightScrollValue(true);
+          break;
+      }
+    }
+  }
+
   const scrollLeft = () => {
     if (scrollContainer.current) {
       scrollContainer.current.scrollLeft -= 150;
@@ -62,14 +97,16 @@ export default function Header() {
       setLeftScrollValue(false);
       setRightScrollValue(scrollValueBefore === scrollContainer.current.scrollLeft);
     }
-  }
+  };
+
+  // console.log("scrollPosition --->", scrollPosition)
 
   return (
     <div className="w-100 d-flex justify-content-center align-items-center">
       <button onClick={scrollLeft} className={`scroll-button scroll-button-left primary-bg-color ${leftScrollValue ? 'invisible' : 'visible'}`}>
         <i className="fa fa-chevron-left"></i>
       </button>
-      <div ref={scrollContainer} className="d-flex justify-content-between align-items-center story overflow-x-scroll-custom pe-2 ps-2">
+      <div ref={scrollContainer} onScroll={handleScroll} className="scroll-container d-flex justify-content-between align-items-center story overflow-x-scroll-custom pe-2 ps-2">
         {
           renderPeopleList(peopleList)
         }
