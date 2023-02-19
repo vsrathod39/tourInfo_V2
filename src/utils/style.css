@@ -1,46 +1,106 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.primary-bg-color {
+  background: #3b71ca;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.fixed-element {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+}
+
+
+.margin-padding-border-outline-none {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
 }
 
 .border-outlined {
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
 }
 
 .login-signup-logo-container {
-    width: 70px;
-    height: 70px;
-    padding: 10px;
+  width: 70px;
+  height: 70px;
+  padding: 10px;
 }
 
 .bold-large-text {
-    font-weight: 700;
-    font-size: 18px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .light-small-text {
-    font-weight: 400;
-    font-size: 12px;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .bold-sm-text {
-    font-weight: 700;
-    font-size: 12px;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .padding-top-buttom-8 {
-    padding: 8px 0px !important;
+  padding: 8px 0px !important;
 }
 
 .login-signup-secondary-logo {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .horizontal-line {
-    border-top: 1px solid #bdbdbd;
-    width: 100%; 
-    height: 1px
+  border-top: 1px solid rgb(230, 230, 230);
+  width: 100%;
+  height: 1px
+}
+
+.overflow-x-scroll-custom {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+/* Hide the scroll bar keep the functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Set width and height of the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2px;
+}
+
+/* Set background color of the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #c7c7c7;
+}
+
+/* Set the color and radius of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #faa7a7;
+  border-radius: 5px;
+}
+
+/* On hover, set the color and background of the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #c7c7c7;
+}
+
+/* On hover, set the color and background of the scrollbar track */
+::-webkit-scrollbar-track:hover {
+  background: #faa7a7;
 }

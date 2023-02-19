@@ -18,14 +18,14 @@ import Signup from './signup';
 
 function LoginSignup() {
   const [optSmModal, setOptSmModal] = useState(false);
-  const [formState, setFormState] = useState({email: '', password: ''});
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [isLogiIn, setIsLoginIn] = useState(false);
 
   const toggleShow = () => setOptSmModal(!optSmModal);
 
   const handleChnage = (event: any) => {
-    const {name="", value=""} = event.target;
-    setFormState({...formState, [name]: isEqual(name, 'email') ? toLower(value) : value});
+    const { name = "", value = "" } = event.target;
+    setFormState({ ...formState, [name]: isEqual(name, 'email') ? toLower(value) : value });
   }
 
   return (
@@ -39,7 +39,7 @@ function LoginSignup() {
               {/* <MDBModalTitle>Login/Signup</MDBModalTitle> */}
             </MDBModalHeader>
             <MDBModalBody>
-            <div className='d-flex justify-content-center align-items-center flex-column mb-3'>
+              <div className='d-flex justify-content-center align-items-center flex-column mb-3'>
                 <div className='login-signup-logo-container border-outlined mb-2'>
                   <img src={logo} className='img-fluid shadow-2-strong' alt='logo' />
                 </div>

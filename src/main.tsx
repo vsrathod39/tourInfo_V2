@@ -5,13 +5,14 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import App from './App';
-import './index.css';
-import { store } from './store/store.js';
+// import './index.css';
+import { RouterProvider } from 'react-router-dom';
+// import { store } from './store/store.js';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    {/* <Provider > */}
+    <RouterProvider router={App} />
+    {/* </Provider> */}
   </React.StrictMode>,
 )

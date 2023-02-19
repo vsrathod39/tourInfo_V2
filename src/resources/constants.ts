@@ -1,3 +1,3 @@
 const wordsSentences: Object = {
-    LOGIN: 'Login'
+  LOGIN: 'Login'
 }
